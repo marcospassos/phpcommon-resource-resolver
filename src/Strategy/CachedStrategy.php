@@ -2,8 +2,8 @@
 
 namespace PhpCommon\ResourceResolver\Strategy;
 
-use PhpCommon\ResourceResolver\Registry\MutableArrayRegistry;
-use PhpCommon\ResourceResolver\ResourceRegistry;
+use PhpCommon\ResourceResolver\Map\MutableArrayMap;
+use PhpCommon\ResourceResolver\ResourceMap;
 use PhpCommon\ResourceResolver\ResolverStrategy;
 
 class CachedStrategy implements ResolverStrategy
@@ -17,10 +17,10 @@ class CachedStrategy implements ResolverStrategy
     public function __construct(ResolverStrategy $strategy)
     {
         $this->strategy = $strategy;
-        $this->cache = new MutableArrayRegistry();
+        $this->cache = new MutableArrayMap();
     }
 
-    public function resolve($subject, ResourceRegistry $locator)
+    public function resolve($subject, ResourceMap $locator)
     {
         if ($this->cache->has($subject)) {
             return $this->cache->get($subject);

@@ -3,7 +3,7 @@
 namespace PhpCommon\ResourceResolver\Strategy;
 
 use PhpCommon\ResourceResolver\CannotResolveResourceException;
-use PhpCommon\ResourceResolver\ResourceRegistry;
+use PhpCommon\ResourceResolver\ResourceMap;
 use PhpCommon\ResourceResolver\ResolverStrategy;
 
 class ClassHierarchyStrategy implements ResolverStrategy
@@ -15,7 +15,7 @@ class ClassHierarchyStrategy implements ResolverStrategy
         $this->root = $root;
     }
 
-    public function resolve($subject, ResourceRegistry $locator)
+    public function resolve($subject, ResourceMap $locator)
     {
         if (!class_exists($subject)) {
             throw new CannotResolveResourceException();
@@ -24,7 +24,7 @@ class ClassHierarchyStrategy implements ResolverStrategy
         return $locator->get($this->resolveId($subject, $locator));
     }
 
-    protected function resolveId(string $class, ResourceRegistry $locator) : string
+    protected function resolveId(string $class, ResourceMap $locator) : string
     {
         if ($locator->has($class)) {
             return $class;

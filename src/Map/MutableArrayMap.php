@@ -1,8 +1,8 @@
 <?php
 
-namespace PhpCommon\ResourceResolver\Registry;
+namespace PhpCommon\ResourceResolver\Map;
 
-class MutableArrayRegistry extends ArrayRegistry
+class MutableArrayMap extends ArrayMap
 {
     public function register($id, $resource) : void
     {

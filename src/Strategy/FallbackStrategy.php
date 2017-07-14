@@ -3,7 +3,7 @@
 namespace PhpCommon\ResourceResolver\Strategy;
 
 use PhpCommon\ResourceResolver\CannotResolveResourceException;
-use PhpCommon\ResourceResolver\ResourceRegistry;
+use PhpCommon\ResourceResolver\ResourceMap;
 use PhpCommon\ResourceResolver\ResolverStrategy;
 
 class FallbackStrategy implements ResolverStrategy
@@ -21,7 +21,7 @@ class FallbackStrategy implements ResolverStrategy
         $this->fallback = $fallback;
     }
 
-    public function resolve($subject, ResourceRegistry $locator)
+    public function resolve($subject, ResourceMap $locator)
     {
         try {
             return $this->strategy->resolve($subject, $locator);

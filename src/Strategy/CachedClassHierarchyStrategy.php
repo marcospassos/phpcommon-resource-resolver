@@ -2,7 +2,7 @@
 
 namespace PhpCommon\ResourceResolver\Strategy;
 
-use PhpCommon\ResourceResolver\ResourceRegistry;
+use PhpCommon\ResourceResolver\ResourceMap;
 
 class CachedClassHierarchyStrategy extends ClassHierarchyStrategy
 {
@@ -15,7 +15,7 @@ class CachedClassHierarchyStrategy extends ClassHierarchyStrategy
         $this->cache = [];
     }
 
-    protected function resolveId(string $class, ResourceRegistry $locator) : string
+    protected function resolveId(string $class, ResourceMap $locator) : string
     {
         if (isset($this->cache[$class])) {
             $cached = $this->cache[$class];

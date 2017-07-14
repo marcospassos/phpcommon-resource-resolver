@@ -3,12 +3,12 @@
 namespace PhpCommon\ResourceResolver\Strategy;
 
 use PhpCommon\ResourceResolver\CannotResolveResourceException;
-use PhpCommon\ResourceResolver\ResourceRegistry;
+use PhpCommon\ResourceResolver\ResourceMap;
 use PhpCommon\ResourceResolver\ResolverStrategy;
 
 class NameStrategy implements ResolverStrategy
 {
-    public function resolve($subject, ResourceRegistry $locator)
+    public function resolve($subject, ResourceMap $locator)
     {
         if (!$locator->has($subject)) {
             throw new CannotResolveResourceException('Cannot find resource for '.$subject);

@@ -3,7 +3,7 @@
 namespace PhpCommon\ResourceResolver\Strategy;
 
 use PhpCommon\ResourceResolver\CannotResolveResourceException;
-use PhpCommon\ResourceResolver\ResourceRegistry;
+use PhpCommon\ResourceResolver\ResourceMap;
 use PhpCommon\ResourceResolver\ResolverStrategy;
 
 class ObjectClassStrategy implements ResolverStrategy
@@ -15,7 +15,7 @@ class ObjectClassStrategy implements ResolverStrategy
         $this->strategy = $strategy;
     }
 
-    public function resolve($subject, ResourceRegistry $locator)
+    public function resolve($subject, ResourceMap $locator)
     {
         if (!is_object($subject)) {
             throw new CannotResolveResourceException();

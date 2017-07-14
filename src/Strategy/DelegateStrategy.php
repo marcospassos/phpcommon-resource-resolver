@@ -3,7 +3,7 @@
 namespace PhpCommon\ResourceResolver\Strategy;
 
 use PhpCommon\ResourceResolver\CannotResolveResourceException;
-use PhpCommon\ResourceResolver\ResourceRegistry;
+use PhpCommon\ResourceResolver\ResourceMap;
 use PhpCommon\ResourceResolver\ResolverStrategy;
 
 class DelegateStrategy implements ResolverStrategy
@@ -18,7 +18,7 @@ class DelegateStrategy implements ResolverStrategy
         $this->strategies = $resolvers;
     }
 
-    public function resolve($subject, ResourceRegistry $locator)
+    public function resolve($subject, ResourceMap $locator)
     {
         foreach ($this->strategies as $resolver) {
             try {

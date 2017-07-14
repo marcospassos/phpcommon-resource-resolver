@@ -1,12 +1,12 @@
 <?php
 
-namespace PhpCommon\ResourceResolver\Registry;
+namespace PhpCommon\ResourceResolver\Map;
 
 use Croct\Cct\Locator\ResourceNotFoundException;
-use PhpCommon\ResourceResolver\ResourceRegistry;
+use PhpCommon\ResourceResolver\ResourceMap;
 use ArrayObject;
 
-class ArrayRegistry implements ResourceRegistry
+class ArrayMap implements ResourceMap
 {
     protected $resources;
 

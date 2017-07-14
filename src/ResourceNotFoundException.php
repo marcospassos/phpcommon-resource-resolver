@@ -1,6 +1,6 @@
 <?php
 
-namespace Croct\Cct\Locator;
+namespace PhpCommon\ResourceResolver;
 
 use RuntimeException;
 

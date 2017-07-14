@@ -2,7 +2,7 @@
 
 namespace PhpCommon\ResourceResolver\Strategy;
 
-use PhpCommon\ResourceResolver\Locator\MutableArrayRegistry;
+use PhpCommon\ResourceResolver\Registry\MutableArrayRegistry;
 use PhpCommon\ResourceResolver\ResourceRegistry;
 use PhpCommon\ResourceResolver\ResolverStrategy;
 

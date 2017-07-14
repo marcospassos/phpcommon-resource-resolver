@@ -1,6 +1,6 @@
 <?php
 
-namespace PhpCommon\ResourceResolver\Locator;
+namespace PhpCommon\ResourceResolver\Registry;
 
 use Croct\Cct\Locator\ResourceNotFoundException;
 use PhpCommon\ResourceResolver\ResourceRegistry;

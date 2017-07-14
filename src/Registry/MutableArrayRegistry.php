@@ -1,6 +1,6 @@
 <?php
 
-namespace PhpCommon\ResourceResolver\Locator;
+namespace PhpCommon\ResourceResolver\Registry;
 
 class MutableArrayRegistry extends ArrayRegistry
 {

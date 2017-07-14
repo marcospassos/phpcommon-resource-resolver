@@ -3,6 +3,6 @@
 namespace PhpCommon\ResourceResolver;
 
 interface ResourceMap {
-    public function get($id);
-    public function has($id) : bool;
+    public function get(string $id);
+    public function has(string $id) : bool;
 }

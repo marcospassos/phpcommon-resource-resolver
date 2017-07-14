@@ -2,9 +2,9 @@
 
 namespace PhpCommon\ResourceResolver\Map;
 
-use Croct\Cct\Locator\ResourceNotFoundException;
 use PhpCommon\ResourceResolver\ResourceMap;
 use ArrayObject;
+use PhpCommon\ResourceResolver\ResourceNotFoundException;
 
 class ArrayMap implements ResourceMap
 {
@@ -15,7 +15,7 @@ class ArrayMap implements ResourceMap
         $this->resources = new ArrayObject($resources);
     }
 
-    public function get($id)
+    public function get(string $id)
     {
         if (!$this->has($id)) {
             throw new ResourceNotFoundException();
@@ -24,7 +24,7 @@ class ArrayMap implements ResourceMap
         return $this->resources[$id];
     }
 
-    public function has($id): bool
+    public function has(string $id): bool
     {
         return array_key_exists($id, $this->resources);
     }
